@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  background-color: #2b5428;
+  height: 100vh;
+  max-width: 1800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.App form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  width: 40%;
+  color: white;
+  font-size: larger;
+  border: 5px solid #1f361d;
+  box-shadow: 3px 3px 3px 3px #1f361d;
+  border-radius: 20px;
+  padding: 2rem;
+  line-height: 3rem;
+}
+label {
+  text-align: left;
+  width: 80%;
+}
+input {
+  display: flex;
+  font-size: larger;
+  flex-direction: column;
+  max-width: 1600px;
+  width: 80%;
+  height: 4vh;
+  border-radius: 10px;
+  border: none;
+  padding-left: 0.5rem;
+}
+button {
+  width: 30%;
+  min-width: 70px;
+  height: 4vh;
+  margin-top: 2rem;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 5px #1f361d;
+  font-size: large;
+  color: #1f361d;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
