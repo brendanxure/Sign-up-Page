@@ -70,3 +70,18 @@ button {
   justify-content: center;
   align-items: center;
 }
+p {
+  line-height: normal;
+  width: 80%;
+  text-align: left;
+}
+.offscreen {
+  position: absolute;
+    left: -9999px;
+}
+.instruction {
+  background-color: #1f361d;
+  border-radius: 10px;
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
+}
