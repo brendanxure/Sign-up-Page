@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import {faCheck, faTimes, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 function App() {
@@ -39,24 +41,30 @@ function App() {
             <form onSubmit={(e)=> e.preventDefault()}>
                 <h2>Welcome, Please register</h2>
                 <label htmlFor="username">
-                    Username:
+                    <>Username:   </> 
+                    {validUsername ? <FontAwesomeIcon icon={faCheck} /> : username && !validUsername ? <FontAwesomeIcon icon={faTimes} /> : null}
                 </label>
-                <input id="username" type='text' autoFocus value={username} onChange={(e)=> setUsername(e.target.value)} autoComplete='off' aria-invalid={!validUsername ? 'true' : 'false'} aria-describedby='usernote' />
-                <p id='usernote' className={ username && !validUsername ? 'instruction' : 'offscreen' }>
-                    5 to 24 characters.<br />Must be letter or numbers.<br />
-                </p>
+                <input id="username" type='text' required autoFocus value={username} onChange={(e)=> setUsername(e.target.value)} autoComplete='off' placeholder='Please input a username' />
+                {username && !validUsername ? <p id='usernote' className='instruction' >
+                  <FontAwesomeIcon icon={faInfoCircle} /> 5 to 24 characters.<br />Must be letter or numbers.<br />
+                </p> : null}
                 <label htmlFor="password">
-                    Password:
+                    <>Password:    </>  
+                    {validPassword ? <FontAwesomeIcon icon={faCheck} /> : password && !validPassword ? <FontAwesomeIcon icon={faTimes}/> :null}
                 </label>
-                <input id="password" type='password' value={password} onChange={(e)=> setPassword(e.target.value)} />
+                <input id="password" placeholder='Please input password' required type='password' value={password} onChange={(e)=> setPassword(e.target.value)} />
                 <p className={ password && !validPassword ? 'instruction' : 'offscreen'}>
                     At least 8 characters.<br />Must contain Uppercase, lowercase and numbers.<br />
                 </p>
                 <label htmlFor="confirm" >
-                    Confirm Password:
+                    <>Confirm Password:   </>
+                    
                 </label>
-                <input id="confirm" type='password' value={cPassword} onChange={(e)=> setCPassword(e.target.value)} />
-                <button>Submit</button>
+                <input id="confirm" type='password' required value={cPassword} onChange={(e)=> setCPassword(e.target.value)} placeholder='Please Confirm password' />
+                {cPassword && !cValidPassword && password ? <p className='instruction'>
+                    password must match.<br />Must contain Uppercase, lowercase and numbers.<br />
+                </p> : cPassword && !cValidPassword && !password ? <p className='instruction'> Please Input password in the previous input</p> :null }
+                <button disabled={validPassword && validUsername && cValidPassword ? false : true} >Submit</button>
             </form>
         </div>
     );
