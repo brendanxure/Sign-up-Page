@@ -16,7 +16,7 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
-.App {
+.Register {
   background-color: #2b5428;
   height: 100vh;
   max-width: 1800px;
@@ -25,7 +25,7 @@ code {
   align-items: center;
   justify-content: center;
 }
-.App form {
+.Register form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,6 +74,27 @@ p {
   line-height: normal;
   width: 80%;
   text-align: left;
+}
+.Successdiv1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  box-shadow: 3px 3px 3px 3px #1f361d;
+  border-radius: 20px;
+  padding: 2rem;
+  line-height: 3rem;
+  color: white;
+  font-size: larger;
+}
+.Successdiv1 h3 {
+  font-weight: lighter;
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 9, 42);
+  font-style: italic;
 }
 .offscreen {
   position: absolute;
